@@ -1,3 +1,11 @@
+What is Alabester?
+==================
+
+Alabaster with some bugs squashed. Upstream documentation remains valid.
+
+Forked from:
+https://github.com/spookylukey/alabaster/tree/fix-width-breaking-points
+
 What is Alabaster?
 ==================
 
