@@ -1,0 +1,49 @@
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# partly based on MIT-licensed code from "nikkie": https://github.com/ftnext/action-push-ghpages/blob/main/action.yml
+
+name: Upload Python Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build package % push to gh-pages branch
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build 'sphinx>=1.3,<1.8' 'invoke>=1.0.0' 'invocations>=1.2.0' 'semantic_version>=2.4,<2.5' 'wheel==0.24' 'twine==1.11.0' 'releases>=1.5.1,<2.0' 'flake8==3.6.0'
+        
+    - name: Build package
+      run: python -m build
+      
+    - name: Push package to gh-pages branch
+      run: |
+          rm -rf .git .gitignore
+          git init
+          git branch -m main  # ensure future compatibility
+          git config user.name $GITHUB_ACTOR
+          git config user.email $GITHUB_ACTOR@users.noreply.github.com
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git add .
+          git commit -a -m "Automatic build from latest main commit"
+          git push --force origin main:gh-pages
+      shell: bash
