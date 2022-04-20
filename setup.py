@@ -16,7 +16,7 @@ with codecs.open("README.rst", encoding="utf-8") as f:
 setup(
     name="alabester",
     version=version,
-    description="A configurable sidebar-enabled Sphinx theme forked from Alabaster",
+    description="A non-configurable sidebar-enabled Sphinx theme borked from Alabaster",
     long_description=readme,
     author="introt",
     author_email="introt@koti.fimnet.fi",
@@ -25,7 +25,7 @@ setup(
     include_package_data=True,
     entry_points={"sphinx.html_themes": ["alabester = alabester"]},
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 7 - Inactive",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",

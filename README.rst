@@ -1,10 +1,15 @@
 What is Alabester?
 ==================
 
-Alabaster with some bugs squashed. Upstream documentation remains valid.
+Alabaster with some bugs squashed, and one big one introduced: it lost much of the configurability.
 
-Forked from:
-https://github.com/spookylukey/alabaster/tree/fix-width-breaking-points
+The name is kinda ironic; despite no changes other than the name, so many things broke.
+
+For future reference: just put a fixed ``alabaster.css`` into the ``_static`` folder and call it a day ;)
+
+If you'd like to help figuring out what went wrong here, check out the writeup on my `bleg <https://introt.github.io/bleg>`_.
+
+-----
 
 What is Alabaster?
 ==================
