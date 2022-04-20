@@ -1,13 +1,15 @@
 What is Alabester?
 ==================
 
-Alabaster with some bugs squashed, and one big one introduced: it lost much of the configurability.
+Alabaster with some CSS bugs squashed.
 
-The name is kinda ironic; despite no changes other than the name, so many things broke.
+However, it's not a drop-in replacement; due to Sphinx hard-coding some extra combatibility for Alabaster, your sidebar config likely won't work without modifications.
 
-For future reference: just put a fixed ``alabaster.css`` into the ``_static`` folder and call it a day ;)
+* If you'd like to know more, check out the writeup on my `bleg <https://introt.github.io/bleg>`_.
 
-If you'd like to help figuring out what went wrong here, check out the writeup on my `bleg <https://introt.github.io/bleg>`_.
+* If you want a quick fix, just put a fixed ``alabaster.css`` into the ``_static`` folder and call it a day.
+
+* If you're feeling adventurous, [join in on the fun](https://github.com/introt/alabester/fork)!
 
 -----
 
