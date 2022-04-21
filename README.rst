@@ -1,12 +1,14 @@
 What is Alabester?
 ==================
 
-Alabaster with some CSS bugs squashed. See it live at [introt docs](https://introt.github.io/docs/).
+Alabaster with some CSS bugs squashed. See it live at `introt docs <https://introt.github.io/docs/>`_.
 
 How to use Alabester?
 .....................
 
-After installation, just `s/labaster/labester/g` across your project,
+``pip install alabester``
+
+After installation, just ``s/labaster/labester/g`` across your project,
 requirements included (if Alabaster was indirectly pulled by Sphinx,
 make sure to add Alabester to your list!) - the 0.7.x versions will
 try not to break compatibility.
@@ -15,7 +17,7 @@ However, it's not a drop-in replacement; due to Sphinx hard-coding
 some extra defaults for Alabaster, your sidebar might not look as
 expected without the following modification.
 
-For the default Alabaster experience, put this in your `conf.py`:
+For the default Alabaster experience, put this in your ``conf.py``:
 
 .. code-block:: python
 
@@ -30,6 +32,13 @@ For the default Alabaster experience, put this in your `conf.py`:
    }
 
 If you'd like to know more, check out eg. sphinx-doc/sphinx#5066. (I also wrote a debugging murder mystery on my `bleg <https://introt.github.io/bleg>`_ on 4/20).
+
+Changelog
+.........
+
+`Available on GitHub <https://github.com/introt/alabester/releases>`_.
+
+For max combatibility, you can pin version 0.7.20. Upstream docs apply.
 
 Want to improve Alabester? `Join in on the fun <https://github.com/introt/alabester>`_!
 
