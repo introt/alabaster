@@ -1,4 +1,4 @@
-# This workflow will upload a Python Package using Twine when a release is created
+# This workflow will not upload a Python Package using Twine when a release is created
 # For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
 
 # This workflow uses actions that are not certified by GitHub.
@@ -18,7 +18,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Build package & push to gh-pages branch
+    name: Build package & push to build branch
     steps:
     - name: Check out the repository
       uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
     - name: Build package
       run: python -m build --no-isolation
       
-    - name: Push package to gh-pages branch
+    - name: Push package to build branch
       run: |
           rm -rf .git .gitignore
           git init
@@ -45,5 +45,5 @@ jobs:
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git add .
           git commit -a -m "Automatic build from latest main branch commit"
-          git push --force origin main:gh-pages
+          git push --force origin main:build
       shell: bash
