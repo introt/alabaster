@@ -1,15 +1,37 @@
 What is Alabester?
 ==================
 
-Alabaster with some CSS bugs squashed.
+Alabaster with some CSS bugs squashed. See it live at [introt docs](https://introt.github.io/docs/).
 
-However, it's not a drop-in replacement; due to Sphinx hard-coding some extra combatibility for Alabaster, your sidebar config likely won't work without modifications.
+How to use Alabester?
+.....................
 
-* If you'd like to know more, check out the writeup on my `bleg <https://introt.github.io/bleg>`_.
+After installation, just `s/labaster/labester/g` across your project,
+requirements included (if Alabaster was indirectly pulled by Sphinx,
+make sure to add Alabester to your list!) - the 0.7.x versions will
+try not to break compatibility.
 
-* If you want a quick fix, just put a fixed ``alabaster.css`` into the ``_static`` folder and call it a day.
+However, it's not a drop-in replacement; due to Sphinx hard-coding
+some extra defaults for Alabaster, your sidebar might not look as
+expected without the following modification.
 
-* If you're feeling adventurous, [join in on the fun](https://github.com/introt/alabester/fork)!
+For the default Alabaster experience, put this in your `conf.py`:
+
+.. code-block:: python
+
+   html_sidebars = {
+           '**': [
+               'about.html',
+               'navigation.html',
+               'relations.html',
+               'searchbox.html',
+               'donate.html'
+           ]
+   }
+
+If you'd like to know more, check out eg. sphinx-doc/sphinx#5066. (I also wrote a debugging murder mystery on my `bleg <https://introt.github.io/bleg>`_ on 4/20).
+
+Want to improve Alabester? `Join in on the fun <https://github.com/introt/alabester>`_!
 
 -----
 
