@@ -25,7 +25,9 @@ setup(
     include_package_data=True,
     entry_points={"sphinx.html_themes": ["alabester = alabester"]},
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Framework :: Sphinx",
+        "Framework :: Sphinx :: Theme",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
@@ -37,6 +39,7 @@ setup(
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Documentation",
+        "Topic :: Documentation :: Sphinx",
         "Topic :: Software Development :: Documentation",
     ],
 )
