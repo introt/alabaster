@@ -1,5 +1,10 @@
-What is Alabester?
-==================
+.. warning::
+    This repository is no longer updated as Alabaster
+    is once again under active maintenance. Hooray!
+
+
+What ~is~ was Alabester?
+========================
 
 Alabaster with some CSS bugs squashed. See it live at `introt docs <https://introt.github.io/docs/>`_.
 
